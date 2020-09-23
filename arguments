@@ -1,0 +1,16 @@
+import argparse
+import os
+import time
+parser = argparse.ArgumentParser(description='')
+parser.add_argument("-m", "--mtime", help="Print modification time", action="store_true")
+parser.add_argument("-s", "--size", help="Print size in MB of the file", action="store_true")
+parser.add_argument("-r", "--rename", help="Change file name to B", action="store_true")
+
+args = parser.parse_args()
+file = '/Users/Аня/PycharmProjects/pythonProject/main.py'
+
+if args.mtime:
+    print("modification time: %s" % time.ctime(os.path.getmtime(file)))
+if args.size:
+    size_of_file = (os.path.getsize(file))/1024
+    print("size of file is %s" % size)
