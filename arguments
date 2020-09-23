@@ -13,4 +13,6 @@ if args.mtime:
     print("modification time: %s" % time.ctime(os.path.getmtime(file)))
 if args.size:
     size_of_file = (os.path.getsize(file))/1024
-    print("size of file is %s" % size)
+    print("size of file is %s" % size_of_file)
+if args.rename:
+    os.rename('main.py', 'B.py')
